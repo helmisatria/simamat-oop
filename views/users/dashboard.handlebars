@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="styles/materialize.min.css"  media="screen,projection"/>
+  <link rel="stylesheet" href="styles/dashboard.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SIMAMAT</title>
+</head>
+
+<body>
+  <div id="header" class="row">
+    <div class="col s3">
+      <img src="images/pic_pojok.png" id="pic_pojok">
+    </div>
+    <div class="col s3">
+      <div id="welcome" class="valign-wrapper">
+        <i id="img-orang" class="material-icons bulet">accessibility</i>
+        <span><span id="welcome-text">Selamat Datang,</span> {{user.role}}</span>
+      </div>
+    </div>
+    <div class="col s6">
+      <div id="logout-text" class="valign-wrapper right">
+        <a href="/logout">Logout</a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div id="kiri" class="col s3">
+      <ul class="collection">
+        <li class="collection-item valign-wrapper" id="navigasi">Navigasi</li>
+        {{#each navigasi}}
+          <a href="{{href}}" style="color: inherit">
+            <li class="collection-item valign-wrapper {{class}}">
+              <i class="material-icons bulet">{{icon}}</i> {{nama}}
+            </li>
+          </a>
+        {{/each}}
+      </ul>
+    </div>
+    <div id="kanan" class="col s9">
+      <div class="row" id="dashboard-cards">
+        {{#each dashboardContent}}
+          <div class="col s4">
+            <div class="card grey lighten-5">
+              <div class="card-content">
+                <p class="number-dashboard-card" id="{{id}}">---<p></span>{{text}}</span>
+              </div>
+              <div class="card-action">
+                <div class="row" style="margin-bottom: 5px">
+                  <a class="waves-effect waves-light btn-large col s12 btn-capitalize-text btn-round btn-dashboard" href="{{href}}">{{text_btn}}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/dashboard/dashboard.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      let url
+      {{#each dashboardContent}}
+        url = `/get_count_dashboard/{{urlParameter}}`
+
+        $.ajax({
+          type: "POST",
+          url: url,
+          statusCode: {
+            400: function(data) {
+              alert(data.responseText)
+            },
+            200: function(result) {
+              $('#{{id}}').text(result.data[{{@index}}])
+            }
+          }
+        })
+      {{/each}}
+      });
+  </script>
+</body>
+</html>

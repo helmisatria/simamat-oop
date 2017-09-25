@@ -1,0 +1,21 @@
+[{
+  "nama": "Dashboard",
+  "icon": "home",
+  "href": "#"
+}, {
+  "nama": "Data User",
+  "icon": "people",
+  "href": "#"
+}, {
+  "nama": "Kelola Role Petugas",
+  "icon": "settings",
+  "href": "#"
+}, {
+  "nama": "Reset Password",
+  "icon": "vpn_key",
+  "href": "#"
+}, {
+  "nama": "Backup Database",
+  "icon": "disc_full",
+  "href": "#"
+}]
