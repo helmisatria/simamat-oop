@@ -38,9 +38,9 @@ module.exports.routes = {
    * DASHBOARD ROUTE GET
    */
 
-  '/dashboard': {
+  '/dashboard': [{
     controller: 'dashboard', action: 'login'
-  },
+  }],
 
   /**
    * LOGIN ROUTES GET AND POST
@@ -48,6 +48,9 @@ module.exports.routes = {
 
   'get /login': {
     view: 'users/login',
+    locals: {
+      title: 'Log in'
+    },
     policy: 'isNotLoggedIn'
   },
   'post /login': {

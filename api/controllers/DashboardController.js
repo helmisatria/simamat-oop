@@ -57,7 +57,8 @@ module.exports = {
 		res.view('users/dashboard', {
 			navigasi,
 	    user: req.session.user,
-	    dashboardContent
+	    dashboardContent,
+			title: 'Dashboard'
 		})
 	}
 };
