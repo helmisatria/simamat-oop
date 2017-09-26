@@ -21,6 +21,18 @@ module.exports = {
       type: 'string',
       required: true
     },
+    nama: {
+      type: 'string',
+      required: true
+    },
+    no_ktp: {
+      type: 'string',
+      required: true
+    },
+    alamat: {
+      type: 'string',
+      required: true
+    }
   },
 
   attemptLogin: (inputs, cb) => {

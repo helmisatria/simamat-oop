@@ -35,14 +35,6 @@ module.exports.routes = {
   '/': '/login',
 
   /**
-   * DASHBOARD ROUTE GET
-   */
-
-  '/dashboard': [{
-    controller: 'dashboard', action: 'login'
-  }],
-
-  /**
    * LOGIN ROUTES GET AND POST
    */
 
@@ -63,6 +55,55 @@ module.exports.routes = {
 
   'get /logout': {
     controller: 'user', action: 'logout'
+  },
+
+  /**
+   * DASHBOARD ROUTE GET
+   */
+
+  '/dashboard': [{
+    controller: 'dashboard', action: 'login'
+  }],
+
+  /**
+   * DATA ROUTE GET
+   */
+
+  '/data': {
+    controller: 'data', action: 'default'
+  },
+
+  /**
+   * HANDLE USER CRUD DATA -=USER=- REQUEST FROM AJAX
+   */
+  'post /create_data/user' : {
+    controller: 'admin', action: 'createuser'
+  },
+
+  'post /delete_data/user': {
+    controller: 'admin', action: 'deleteuser'
+  },
+
+  'post /edit_data/user/:fieldCount': {
+    controller: 'admin', action: 'updateuser'
+  },
+
+
+  /**
+   * POST to get DATA USER and BARANG
+   */
+
+  'post /get_data/user': {
+    controller: 'user', action: 'getDataUser'
+  },
+
+
+  /**
+   * POST to get COUNT DATA USER and BARANG
+   */
+
+  'post /get_count_dashboard/user': {
+    controller: 'user', action: 'getCountDataUser'
   }
 
   /***************************************************************************

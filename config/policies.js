@@ -36,6 +36,9 @@ module.exports.policies = {
   ***************************************************************************/
   dashboardController: {
     login: 'sessionAuth'
+  },
+  dataController: {
+    default: 'sessionAuth'
   }
 	// RabbitController: {
 

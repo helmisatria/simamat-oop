@@ -9,7 +9,7 @@
     "unique" : {
       "0": {
         "text": "ID User",
-        "field": "_id"
+        "field": "id"
       },
       "1": {
         "text": "Username",
@@ -22,16 +22,16 @@
     },
     "edit": [{
       "text": "Nama",
-      "field": "nama_user"
+      "field": "nama"
     }, {
       "text": "No. KTP",
-      "field": "no_ktp_user"
+      "field": "no_ktp"
     }, {
       "text": "Role",
       "field": "role"
     }, {
       "text": "Alamat",
-      "field": "alamat_user"
+      "field": "alamat"
     }]
   }
 }

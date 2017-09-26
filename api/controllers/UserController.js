@@ -22,5 +22,35 @@ module.exports = {
 		}
 
 		res.redirect('/')
+	},
+
+	getDataUser: (req, res) => {
+		const { body } = req
+
+	  User.findOne({ id: body.id })
+    .then((result) => {
+      if (result) return res.status(200).send(result)
+      return res.status(400).send('Tidak Ditemukan')
+    })
+    .catch((e) => {
+      res.status(400).send({ responseText: e })
+    })
+	},
+
+	getCountDataUser: (req, res) => {
+		const data = []
+
+	  User.count({
+			username: {
+				$ne: 'admin'
+			}
+		})
+	  .then((result) => {
+	    data.push(result)
+	    res.status(200).send({ data })
+	  })
+	  .catch((e) => {
+	    res.status(400).send(e)
+	  })
 	}
 };
