@@ -104,7 +104,25 @@ module.exports.routes = {
 
   'post /get_count_dashboard/user': {
     controller: 'user', action: 'getCountDataUser'
-  }
+  },
+
+  /**
+   * PEMBELIAN ROUTE GET
+   */
+
+   'get /pembelian': {
+     controller : 'kasir', action : 'halamanpembelian'
+   },
+   'post /pembelian': {
+     controller: 'kasir', action: 'pembelian'
+   },
+
+   /*
+    * GET ID BARANG
+    */
+   'get /get_id_barang': {
+     controller: 'barang', action: 'getIdBarang'
+   }
 
   /***************************************************************************
   *                                                                          *
