@@ -122,8 +122,14 @@ module.exports.routes = {
     */
    'get /get_id_barang': {
      controller: 'barang', action: 'getIdBarang'
-   }
+   },
 
+   /*
+* POST  GET DATA BARANG
+    */
+    'post /get_data/barang' : {
+      controller: 'barang', action: 'getDataBarang'
+    }
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
