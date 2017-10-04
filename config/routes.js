@@ -104,8 +104,28 @@ module.exports.routes = {
 
   'post /get_count_dashboard/user': {
     controller: 'user', action: 'getCountDataUser'
-  }
+  },
 
+  /**
+    * GET kelola_role
+    */
+
+  'get /kelola_role':{
+    controller: 'admin', action: 'halamanKelolaRole'
+  },
+
+  /**
+    * POST kelola_role
+    */
+  'post /kelola_role':{
+    controller: 'admin', action: 'kelolaRole'
+  },
+  /**
+    * POST edit_data
+    */
+  'post /edit_data/barang/:fieldCount': {
+    controller: 'stafGudang', action: 'updatebarang'
+  }
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
