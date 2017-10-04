@@ -78,7 +78,7 @@ module.exports = {
     const { body } = req
     console.log(body);
     User.findOneAndUpdate({
-      _id: ObjectId(body.id)
+      id: body.id
     }, {
       $set: {
         role: body.role
