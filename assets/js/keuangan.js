@@ -13,7 +13,7 @@ $(document).ready(function() {
           var barangArray = response;
           var dataBarang = {};
           for (var i = 0; i < barangArray.length; i++) {
-            dataBarang[barangArray[i]._id] = barangArray[i].flag; //countryArray[i].flag or null
+            dataBarang[barangArray[i].id] = barangArray[i].flag; //countryArray[i].flag or null
           }
           $('input.autocomplete').autocomplete({
             data: dataBarang,

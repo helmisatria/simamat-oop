@@ -5,11 +5,11 @@
 }, {
   "nama": "Data Barang",
   "icon": "extension",
-  "href": "#"
+  "href": "/data"
 }, {
   "nama": "Data Penjualan",
   "icon": "style",
-  "href": "/keuangan"
+  "href": "/pembelian"
 }, {
   "nama": "Data Pembelian Barang",
   "icon": "extension",

@@ -9,7 +9,7 @@
     "unique" : {
       "0": {
         "text": "ID Barang",
-        "field": "_id"
+        "field": "id"
       },
       "1": {
         "text": "Nama Barang",
