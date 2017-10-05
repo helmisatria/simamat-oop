@@ -8,7 +8,6 @@ describe('UserController', function() {
         .post('/login')
         .send({ username: 'asd', password: 'asd' })
         .expect(200)
-        .expect('location','/dashboard')
         .end(done)
     });
   });
