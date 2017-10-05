@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-	login: (req, res) => {
+	default: (req, res) => {
 		const { user } = req.session
 
 	  let navigasi

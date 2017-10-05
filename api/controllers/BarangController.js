@@ -63,5 +63,18 @@ module.exports = {
 				collection
 			})
 		})
+	},
+
+	getCountDataBarang: (req, res) => {
+		const data = []
+
+	  Barang.count({})
+	  .then((result) => {
+	    data.push(result)
+	    res.status(200).send({ data })
+	  })
+	  .catch((e) => {
+	    res.status(400).send(e)
+	  })
 	}
 };

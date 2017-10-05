@@ -62,7 +62,7 @@ module.exports.routes = {
    */
 
   '/dashboard': [{
-    controller: 'dashboard', action: 'login'
+    controller: 'dashboard', action: 'default'
   }],
 
   /**
@@ -132,7 +132,7 @@ module.exports.routes = {
    */
 
    'get /pembelian': {
-     controller : 'kasir', action : 'halamanpembelian'
+     controller : 'pembelian', action : 'halamanpembelian'
    },
    'post /pembelian': {
      controller: 'kasir', action: 'pembelian'
