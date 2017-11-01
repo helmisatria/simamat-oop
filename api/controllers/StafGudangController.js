@@ -13,9 +13,16 @@ module.exports = {
 	* `StafGudangController.createbarang()`
 	*/
 	createbarang: function (req, res) {
-		return res.json({
-			todo: 'createbarang() is not implemented yet!'
-		});
+		const { body } = req
+		Object.assign(body, { id_staf_gudang: req.session.user.id})
+
+		Barang.create(body, function(err, result){
+			if (err) {
+				res.status(400).send({ responseText: 'Tambah barang gagal'})
+			} else {
+				res.status(200).send({ responseText: 'Tambah barang baru berhasil'})
+			}
+		})
 	},
 
 

@@ -127,6 +127,9 @@ module.exports.routes = {
     controller: 'stafGudang', action: 'updatebarang'
   },
 
+  'post /create_data/barang': {
+    controller: 'stafGudang', action: 'createbarang'
+  },
   /**
    * PEMBELIAN ROUTE GET
    */
@@ -146,7 +149,7 @@ module.exports.routes = {
    },
 
    /*
-* POST  GET DATA BARANG
+   * POST  GET DATA BARANG
     */
     'post /get_data/barang' : {
       controller: 'barang', action: 'getDataBarang'
