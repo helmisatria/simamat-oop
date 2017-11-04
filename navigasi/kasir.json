@@ -7,11 +7,11 @@
   "icon": "extension",
   "href": "/data"
 }, {
-  "nama": "Data Penjualan",
+  "nama": "Penjualan Barang",
   "icon": "style",
   "href": "/pembelian"
 }, {
-  "nama": "Data Pembelian Barang",
+  "nama": "Data Penjualan Barang",
   "icon": "extension",
   "href": "#"
 }, {

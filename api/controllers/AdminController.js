@@ -76,13 +76,11 @@ module.exports = {
   */
   kelolaRole: function (req, res) {
     const { body } = req
-    console.log(body);
-    User.findOneAndUpdate({
+    
+    User.update({
       id: body.id
     }, {
-      $set: {
-        role: body.role
-      }
+      role: body.role
     })
     .then((result) => {
       console.log(result);
@@ -98,11 +96,6 @@ module.exports = {
   * `AdminController.halamanKelolaRole`
   */
   halamanKelolaRole: (req, res) => {
-    const handlebars = require('handlebars');
-    handlebars.registerHelper('ifCond', function (v1, v2, options) {
-      if (v1 === v2) return options.fn(this)
-      return options.inverse(this)
-    })
     const navigasiAdmin = require('../../navigasi/admin')
     const tableRowAdminKelolaRole = require('../../dashboard/tablerow/adminKelolaRole')
     const dataContentAdminKelolaRole = require('../../dataContent/adminKelolaRole')
@@ -127,6 +120,8 @@ module.exports = {
       sort: 'id DESC'
     })
     .exec(function(err,data) {
+      console.log(data);
+      
       res.view('users/kelola_role', {
         user,
         navigasi,

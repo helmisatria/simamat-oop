@@ -11,5 +11,4 @@ describe('UserController', function() {
         .end(done)
     });
   });
-
 });

@@ -35,10 +35,13 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
   dashboardController: {
-    login: 'sessionAuth'
+    default: 'sessionAuth'
   },
   dataController: {
-    default: 'sessionAuth'
+    '*': 'sessionAuth'
+  },
+  adminController: {
+    '*': 'sessionAuth'
   }
 	// RabbitController: {
 

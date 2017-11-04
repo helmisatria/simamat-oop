@@ -1,13 +1,12 @@
 {
-  "title": "Data Pembelian Barang",
-  "btn-left": "Cetak Data Pembelian",
-  "btn-right": "Pembelian Baru",
+  "title": "Data Barang",
+  "search-placeholder": "Cari Data Barang",
   "kasir": true,
   "modals" : {
     "unique" : {
       "0": {
         "text": "ID Barang",
-        "field": "_id"
+        "field": "id"
       },
       "1": {
         "text": "Nama Barang",

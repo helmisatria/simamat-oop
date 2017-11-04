@@ -59,6 +59,13 @@ module.exports = {
 			collection = 'barang'
 			dataModel = Barang
 			userModel = Manajer
+		}  else if (user.role === 'Kasir') {
+			navigasi = navigasiKasir
+			dataTR = tableRowKasir
+			dataContent = dataContentKasir
+			collection = 'barang'
+			dataModel = Barang
+			userModel = Kasir
 		}
 		navigasi[0].href = '/dashboard'
 		navigasi[1].href = '#'

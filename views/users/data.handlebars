@@ -9,6 +9,7 @@
   <link rel="stylesheet" type="text/css" href="styles/sweetalert.css">
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SIMAMAT</title>
 </head>
 
 <body>
@@ -46,7 +47,7 @@
         <div class="col {{#if dataContent.manajer}} s2 {{else}} s3 {{/if}}" id="sub-judul">
           <p>{{dataContent.title}}</p>
         </div>
-        <div class="col {{#if dataContent.manajer}} s3 {{else}} s7 {{/if}}" style="margin-left: 0">
+        <div class="col {{#ifOr dataContent.manajer dataContent.kasir}} s3 {{/ifOr}} {{#ifNot2 dataContent.manajer dataContent.kasir}} s7 {{/ifNot2}}" style="margin-left: 0">
           <div class="input-field valign-wrapper">
             <label class="label-icon" for="search">
               <i class="material-icons" id="search-icon">search</i>
@@ -55,14 +56,16 @@
             <i class="material-icons" id="close-icon" onclick="clearInput()">close</i>
           </div>
         </div>
-        {{#unless dataContent.manajer}}
+        {{#if dataContent.btn-left}}       
         <div class="col s6 l5">
           <a class="waves-effect btn sm-text-capitalize" id="cetak_data_barang_btn">{{dataContent.btn-left}}</a>
         </div>
+        {{/if}}
+        {{#if dataContent.btn-right}}
         <div class="col s7" style="padding-left: 0">
           <a class="waves-effect btn sm-text-capitalize modal-trigger" id="right-btn" href="#modal-create-data"><i class="material-icons right" id="add-icon">add</i>{{dataContent.btn-right}}</a>
         </div>
-        {{/unless}}
+        {{/if}}
       </div>
       <div class="row">
         <table class="bordered striped centered responsive-table" id="table_data">

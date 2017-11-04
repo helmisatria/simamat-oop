@@ -13,56 +13,18 @@ module.exports = {
 			return res.status(200).send(result)
 		})
 	},
+
 	getDataBarang : (req,res) => {
-		const { user } = req.session
-		let navigasi
-		let dataTR
-		let collection
-		let dataContent
+		const { body } = req
 
-		if (user.role === 'Staf Gudang') {
-			navigasi = navigasiStafGudang
-			dataTR = tableRowStafGudang
-			dataContent = dataContentStafGudang
-			collection = 'barang'
-		} else if (user.role === 'Admin') {
-			navigasi = navigasiAdmin
-			dataTR = tableRowAdmin
-			dataContent = dataContentAdmin
-			collection = 'user'
-			navigasi[2].href = '/kelola_role'
-		} else if (user.role === 'Manajer') {
-			navigasi = navigasiManajer
-			dataTR = tableRowManajer
-			dataContent = dataContentManajer
-			collection = 'barang'
-		} else if (user.role === 'Kasir') {
-			navigasi = navigasiKasir
-			dataTR = tableRowKasir
-			dataContent = dataContentManajer
-			collection = 'barang'
-		}
-
-		navigasi[0].href = '/dashboard'
-		navigasi[1].href = '#'
-		navigasi[0].class = ''
-		navigasi[1].class = 'active-collection'
-		navigasi[2].class = ''
-
-		Barang.find({
-		sort : 'id DESC'
-		})
-		.exec((data) => {
-			res.view('data',
-			{
-				navigasi,
-				user: req.session.user,
-				data,
-				dataTR,
-				dataContent,
-				collection
+		Barang.findOne({ id: body.id })
+			.then((result) => {
+				if (result) return res.status(200).send(result)
+				return res.status(400).send('Tidak Ditemukan')
 			})
-		})
+			.catch((e) => {
+				res.status(400).send({ responseText: e })
+			})
 	},
 
 	getCountDataBarang: (req, res) => {
@@ -76,5 +38,31 @@ module.exports = {
 	  .catch((e) => {
 	    res.status(400).send(e)
 	  })
+	},
+
+	deleteBarang: (req, res) => {
+		const { body } = req
+	
+		Barang.destroy({ id: body.id })
+			.then((result) => {
+				if (result) return res.status(200).send(result)
+				res.status(400).send('Barang Tidak Ditemukan')
+			})
+			.catch((e) => {
+				res.status(400).send(e)
+			})
+	},
+
+	getCountDataBarang: (req, res) => {
+		const data = []
+		
+		Barang.count({})
+			.then((result) => {
+				data.push(result)
+				res.status(200).send({ data })
+			})
+			.catch((e) => {
+				console.log(e)
+			})
 	}
 };

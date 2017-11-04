@@ -31,19 +31,18 @@ module.exports = {
 	*/
 	updatebarang: function (req, res) {
 		const { body } = req
-		const { collection, fieldCount } = req.params
-		console.log({ body });
+		
+		const { fieldCount } = req.params
+
 		for (let i = 0; i < fieldCount; i++) {
-			Barang.findOneAndUpdate({ _id: ObjectId(body.id) }, {
-				$set: {
-					[body[`data[${i}][name]`]]: body[`data[${i}][value]`]
-				}
+			Barang.update({ id: body.id }, {
+				[body['data'][i]['name']]: body['data'][i]['value']
 			})
 			.catch((e) => {
-				console.log(e)
+				return res.status(400).send()
 			})
 		}
-		return res.status(200).send()
+		return res.status(200).send('Data Barang Berhasil Diperbarui')
 	},
 
 

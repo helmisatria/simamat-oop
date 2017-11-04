@@ -6,16 +6,6 @@
  */
 
 module.exports = {
-
-  attributes: {
-
-    createbarang : { type: 'string' },
-
-    updatebarang : { type: 'string' },
-
-    deletebarang : { type: 'string' },
-
-    getbarang : { type: 'string' }
-  }
+  
 };
 

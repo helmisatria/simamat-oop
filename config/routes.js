@@ -106,6 +106,10 @@ module.exports.routes = {
     controller: 'user', action: 'getCountDataUser'
   },
 
+  'post /get_count_dashboard/barang': {
+    controller: 'barang', action: 'getCountDataBarang'
+  },
+
   /**
     * GET kelola_role
     */
@@ -153,7 +157,12 @@ module.exports.routes = {
     */
     'post /get_data/barang' : {
       controller: 'barang', action: 'getDataBarang'
-    }
+    },
+
+    'post /delete_data/barang': {
+      controller: 'barang', action: 'deleteBarang'
+    },
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

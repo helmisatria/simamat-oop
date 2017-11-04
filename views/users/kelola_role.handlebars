@@ -24,7 +24,7 @@
 <body>
   <div id="header" class="row">
     <div class="col s3">
-      <img src="image/pic_pojok.png" id="pic_pojok">
+      <img src="images/pic_pojok.png" id="pic_pojok">
     </div>
     <div class="col s3">
       <div id="welcome" class="valign-wrapper">
@@ -70,11 +70,11 @@
           <tbody>
             {{#each data}}
             <tr>
-                <td class="{{_id}}">{{_id}}</td>
+                <td class="{{id}}">{{id}}</td>
                 <td class="data_td">{{username}}</td>
-                <td class="data_td">{{nama_user}}</td>
+                <td class="data_td">{{nama}}</td>
                 <td class="role_dropdown">
-                  <select id="{{_id}}" style="margin-bottom: 0" onchange="updateRole(this, '{{_id}}')">
+                  <select id="{{id}}" style="margin-bottom: 0" onchange="updateRole(this, '{{id}}')">
                     <option value="Admin" {{#ifCond role "Admin"}} disabled selected {{/ifCond}}>Admin</option>
                     <option value="Manajer" {{#ifCond role "Manajer"}} disabled selected {{/ifCond}}>Manajer</option>
                     <option value="Staf Gudang" {{#ifCond role "Staf Gudang"}} disabled selected {{/ifCond}}>Staf Gudang</option>
