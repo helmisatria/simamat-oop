@@ -5,6 +5,7 @@
   "description": "a Sails application",
   "keywords": [],
   "dependencies": {
+    "assert": "^1.4.1",
     "consolidate": "^0.14.5",
     "ejs": "2.3.4",
     "grunt": "1.0.1",
@@ -27,12 +28,13 @@
     "sails": "~0.12.13",
     "sails-disk": "~0.10.9",
     "sails-mongo": "^0.12.2",
+    "sails-test-helper": "^0.5.0",
     "supertest": "^3.0.0"
   },
   "scripts": {
     "debug": "node debug app.js",
     "start": "node app.js",
-    "test": "node ./node_modules/mocha/bin/mocha test/bootstrap.test.js test/integration/**/*.test.js"
+    "test": "mocha test/bootstrap.test.js test/integration/controllers/*.test.js --recursive -t 30000 -R spec"
   },
   "main": "app.js",
   "repository": {

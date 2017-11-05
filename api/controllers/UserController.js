@@ -21,7 +21,7 @@ module.exports = {
 			res.ok('Logged out succesfully!')
 		}
 
-		res.redirect('/')
+		res.view('users/login')
 	},
 
 	getDataUser: (req, res) => {
