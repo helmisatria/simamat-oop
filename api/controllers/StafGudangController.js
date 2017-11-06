@@ -14,7 +14,8 @@ module.exports = {
 	*/
 	createbarang: function (req, res) {
 		const { body } = req
-		Object.assign(body, { id_staf_gudang: req.session.user.id})
+
+		// Object.assign(body, { id_staf_gudang: req.session.user.id})
 
 		Barang.create(body, function(err, result){
 			if (err) {
@@ -30,7 +31,7 @@ module.exports = {
 	* `StafGudangController.updatebarang()`
 	*/
 	updatebarang: function (req, res) {
-		const { body } = req
+		const { body } = req		
 		
 		const { fieldCount } = req.params
 
@@ -43,25 +44,5 @@ module.exports = {
 			})
 		}
 		return res.status(200).send('Data Barang Berhasil Diperbarui')
-	},
-
-
-	/**
-	* `StafGudangController.deletebarang()`
-	*/
-	deletebarang: function (req, res) {
-		return res.json({
-			todo: 'deletebarang() is not implemented yet!'
-		});
-	},
-
-
-	/**
-	* `StafGudangController.getbarang()`
-	*/
-	getbarang: function (req, res) {
-		return res.json({
-			todo: 'getbarang() is not implemented yet!'
-		});
 	}
 };

@@ -74,9 +74,19 @@ function getTableData() {
     });
   });
 
+  if (tbl.length === 2) {
+    swal(
+      'Maaf...',
+      'Mohon masukkan ke keranjang terlebih dahulu',
+      'error'
+    )
+    return
+  }
+  
+
   $.ajax({
     type: "POST",
-    url: '/add_pembelian',
+    url: '/pembelian',
     data: {
       data: tbl,
       countBelanja
@@ -92,17 +102,14 @@ function getTableData() {
         });
       },
       200: function(data) {
-        console.log('200', data);
         swal({
           title: "",
           text: data.text,
           type: data.type,
           confirmButtonText: "Ok, Terimakasih"
-        }, () => {
-          setTimeout(() => {
-            location.reload()
-          }, 300)
-        });
+        }).then(() => {
+          location.reload()
+        })
       }
     }
   });
@@ -118,6 +125,15 @@ function deleteItem(id) {
 }
 
 function addItem(){
+  if (!($('#idBarang').val() || $('#kuantitas').val())) {
+    swal(
+      'Maaf...',
+      'Mohon masukkan id barang dan kuantitas yang diinginkan',
+      'error'
+    )
+    return
+  }  
+  
   sameId = $(`tr#${idBarang}`).length
   if (sameId !== 0) {
     return swal({
@@ -125,10 +141,6 @@ function addItem(){
       text: "Barang sudah dimasukkan ke keranjang",
       type: "error",
       confirmButtonText: "OK, Terimakasih"
-    }, () => {
-      setTimeout(() => {
-        location.reload()
-      }, 300)
     });
   }
   totalBiaya = totalBiaya + total

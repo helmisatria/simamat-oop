@@ -28,13 +28,13 @@ module.exports = {
 		const { body } = req
 
 	  User.findOne({ id: body.id })
-    .then((result) => {
-      if (result) return res.status(200).send(result)
-      return res.status(400).send('Tidak Ditemukan')
-    })
-    .catch((e) => {
-      res.status(400).send({ responseText: e })
-    })
+			.then((result) => {
+				if (result) return res.status(200).send(result)
+				return res.status(400).send('Tidak Ditemukan')
+			})
+			.catch((e) => {
+				res.status(400).send({ responseText: e })
+			})
 	},
 
 	getCountDataUser: (req, res) => {

@@ -11,16 +11,6 @@ module.exports = {
     id_kasir :{
       type : 'string',
       required : true
-    },
-
-    dataBarang :{
-      collection : 'barang',
-      via : 'id_staf_gudang'
-    },
-
-    jumlah :{
-      type : 'array',
-      required : true
     }
   }
 };
