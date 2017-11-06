@@ -51,18 +51,5 @@ module.exports = {
 			.catch((e) => {
 				res.status(400).send(e)
 			})
-	},
-
-	getCountDataBarang: (req, res) => {
-		const data = []
-		
-		Barang.count({})
-			.then((result) => {
-				data.push(result)
-				res.status(200).send({ data })
-			})
-			.catch((e) => {
-				console.log(e)
-			})
 	}
 };

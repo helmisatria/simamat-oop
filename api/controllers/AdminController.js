@@ -14,7 +14,7 @@ module.exports = {
   */
   createuser: function (req, res) {
     const { body } = req
-
+    
     User.findOne({ username: body.username }, (err, result) => {
       if (result) {
         return res.status(400).send({ responseText: 'Username Tidak Tersedia' })
@@ -32,7 +32,7 @@ module.exports = {
   */
   updateuser: function (req, res) {
     const { body } = req
-
+    
     const { fieldCount } = req.params
 
     for (let i = 0; i < fieldCount; i++) {
@@ -63,15 +63,6 @@ module.exports = {
   },
 
   /**
-  * `AdminController.getuser()`
-  */
-  getuser: function (req, res) {
-    return res.json({
-      todo: 'getuser() is not implemented yet!'
-    });
-  },
-
-  /**
   * `AdminController.kelolarole()`
   */
   kelolaRole: function (req, res) {
@@ -83,7 +74,6 @@ module.exports = {
       role: body.role
     })
     .then((result) => {
-      console.log(result);
       if (result) return res.status(200).send()
       res.status(400).send('Something wrong!')
     })

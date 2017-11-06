@@ -18,10 +18,10 @@ module.exports = {
 		req.session.user = null
 
 		if (req.wantsJSON) {
-			res.ok('Logged out succesfully!')
+			return res.ok('Logged out succesfully!')
 		}
 
-		res.view('users/login')
+		return res.view('users/login')
 	},
 
 	getDataUser: (req, res) => {
@@ -29,11 +29,14 @@ module.exports = {
 
 	  User.findOne({ id: body.id })
 			.then((result) => {
-				if (result) return res.status(200).send(result)
-				return res.status(400).send('Tidak Ditemukan')
+				if (result) {
+					return res.status(200).send(result)
+				} else {
+					return res.status(400).send('Tidak Ditemukan')
+				}
 			})
 			.catch((e) => {
-				res.status(400).send({ responseText: e })
+				return res.status(400).send({ responseText: e })
 			})
 	},
 

@@ -36,13 +36,9 @@ module.exports = {
 		}
 
 		const beli = async(data) => {
-			console.log(data);
 			
 			const id_kasir = req.session.user.id
 			for (var index = 0; index < data.length; index++) {
-				console.log({ index });
-				
-				console.log({ length: data.length });
 				
 				const id_barang = data[index].id
 				const jumlah = data[index].jumlah
@@ -71,7 +67,7 @@ module.exports = {
 			}
 		}
 
-		const { body } = req
+		const { body } = req		
 		
 	  const data = []
 	  for (let i = 0; i < body.countBelanja; i++) {
@@ -103,7 +99,7 @@ module.exports = {
 	  })
 	  .catch((e) => {
 	    res.status(400).send({
-	      text: `Maaf, ${e} stok tidak mencukupi`,
+	      text: `Maaf, stok ${e} tersisa ${sisaBarang} unit`,
 	      type: 'error'
 	    })
 	  })

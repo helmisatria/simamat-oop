@@ -12,21 +12,11 @@ beforeEach(function (done) {
   .end(done);
 });
 
-describe('KasirController', function() {
-  describe('#pembelian', () => {
-    it('should successfully jual suatu atau beberapa barang', (done) => {
+describe('DataController', function() {
+  describe('#default', () => {
+    it('should directed to /date successfully', (done) => {
       testSession
-        .post('/pembelian') 
-        .send({
-          data: [
-            [
-              '5a000adf2e66825d5183d324',
-              'test',
-              '3',
-              '300000'
-            ]
-          ]
-        })
+        .get('/data')
         .expect(200)
         .end(done)
     })

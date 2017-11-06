@@ -12,8 +12,6 @@ module.exports = {
 	  let navigasi
 	  let dashboardContent
 
-		console.log({user});
-
 		// NAVIGASI
 		const navigasiStafGudang = require('../../navigasi/staf_gudang')
 		const navigasiAdmin = require('../../navigasi/admin')
