@@ -52,7 +52,7 @@ module.exports = {
 	  navigasi[1].href = '/data'
 	  navigasi[2].class = ''
 
-		res.view('users/dashboard', {
+		res.view('users/DashboardView', {
 			navigasi,
 	    user: req.session.user,
 	    dashboardContent,

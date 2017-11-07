@@ -1,7 +1,7 @@
 var request = require('supertest');
 const assert = require('assert');
 
-describe('PembelianController', function() {
+describe('PenjualanController', function() {
   describe('#halamanpembelian', () => {
     it('should directed to /pembelian', (done) => {
       request(sails.hooks.http.app)

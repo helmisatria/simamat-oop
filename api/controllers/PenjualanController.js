@@ -24,7 +24,7 @@ module.exports = {
   	const dataContent = dataContentStafGudang
   	const dataTR = tableRowStafGudang
 
-  	res.view('users/pembelian', {
+  	res.view('users/PenjualanView', {
     	navigasi,
     	dataContent,
     	dataTR

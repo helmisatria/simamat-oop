@@ -112,7 +112,7 @@ module.exports = {
     .exec(function(err,data) {
       console.log(data);
       
-      res.view('users/kelola_role', {
+      res.view('users/KelolaRoleView', {
         user,
         navigasi,
         dataTR,

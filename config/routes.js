@@ -139,10 +139,10 @@ module.exports.routes = {
    */
 
    'get /pembelian': {
-     controller : 'pembelian', action : 'halamanpembelian'
+     controller : 'penjualan', action : 'halamanpembelian'
    },
    'post /pembelian': {
-     controller: 'kasir', action: 'pembelian'
+     controller: 'kasir', action: 'penjualan'
    },
 
    /*

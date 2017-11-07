@@ -82,7 +82,7 @@ module.exports = {
 			sort: 'id DESC'
 		})
 		.exec(function(err, data) {
-			res.view('users/data',
+			res.view('users/DataView',
 			{
 				navigasi,
 				user: req.session.user,

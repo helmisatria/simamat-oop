@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-	pembelian : (req, res) => {
+	penjualan : (req, res) => {
 		
 		let sisaBarang = 0
 		function checkStokBarang(datas) {
