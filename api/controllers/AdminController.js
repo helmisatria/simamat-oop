@@ -82,6 +82,53 @@ module.exports = {
     })
   },
 
+  kelolaPassword: (req, res) => {
+    const { data } = req.body
+
+    console.log({data});
+    
+    if (data[0].value == 'admin') {
+      return res.status(400).send('Username user tidak valid')
+    }
+    
+    User.findOne({ username: data[0].value })
+      .then((user) => {        
+        if (!user) {
+          return res.status(400).send('Username user tidak valid')
+        }
+        
+        User.update({ username: data[0].value }, {
+          password: data[1].value
+        })
+          .then((user) => {
+            res.status(200).send('Password Berhasil Diperbarui')
+          })
+          .catch(() => {
+            res.status(400).send('Password Gagal Diperbarui')
+          })
+        
+      })
+      .catch((err) => {
+        res.status(400).send('Username user tidak valid')
+      })    
+  },
+
+  getUsername: (req, res) => {
+    User.find({
+      where :{
+        username:{
+          $ne: 'admin'
+        }
+      }
+    }, { select: ['username'] })
+      .then((result) => {
+        return res.status(200).send(result)
+      })
+      .catch((err) => {
+        return res.status(400).send(err)
+      })
+  },
+
   /**
   * `AdminController.halamanKelolaRole`
   */
@@ -97,9 +144,11 @@ module.exports = {
     navigasi[0].href = '/dashboard'
     navigasi[1].href = '/data'
     navigasi[2].href = '#'
+    navigasi[3].href = '#'
     navigasi[0].class = ''
     navigasi[1].class = ''
     navigasi[2].class = 'active-collection'
+    navigasi[3].class = ''
 
     User.find({
       where :{

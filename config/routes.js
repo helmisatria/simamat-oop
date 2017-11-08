@@ -39,7 +39,7 @@ module.exports.routes = {
    */
 
   'get /login': {
-    view: 'users/login',
+    view: 'users/LoginView',
     locals: {
       title: 'Log in'
     },
@@ -123,6 +123,14 @@ module.exports.routes = {
     */
   'post /kelola_role':{
     controller: 'admin', action: 'kelolaRole'
+  },
+
+  'post /kelola_password': {
+    controller: 'admin', action: 'kelolaPassword'
+  },
+
+  'get /get_username_user': {
+    controller: 'admin', action: 'getUsername'
   },
   /**
     * POST edit_data

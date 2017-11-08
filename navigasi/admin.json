@@ -13,7 +13,8 @@
 }, {
   "nama": "Reset Password",
   "icon": "vpn_key",
-  "href": "#"
+  "href": "#modal-kelola-password",
+  "aid": "a-kelola-password"
 }, {
   "nama": "Backup Database",
   "icon": "disc_full",

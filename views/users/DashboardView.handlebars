@@ -6,6 +6,7 @@
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="styles/materialize.min.css"  media="screen,projection"/>
   <link rel="stylesheet" href="styles/dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.7.0/sweetalert2.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
   <!--Let browser know website is optimized for mobile-->
@@ -35,7 +36,7 @@
       <ul class="collection">
         <li class="collection-item valign-wrapper" id="navigasi">Navigasi</li>
         {{#each navigasi}}
-          <a href="{{href}}" style="color: inherit">
+          <a id="{{aid}}" href="{{href}}" style="color: inherit">
             <li class="collection-item valign-wrapper {{class}}">
               <i class="material-icons bulet">{{icon}}</i> {{nama}}
             </li>
@@ -63,10 +64,15 @@
     </div>
   </div>
 
+  {{> modal_kelola_password this}}
+
+
   <!-- JAVASCRIPT -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="js/materialize.min.js"></script>
   <script type="text/javascript" src="js/dashboard/dashboard.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.7.0/sweetalert2.min.js"></script>
+  
   <script type="text/javascript">
     $(document).ready(function(){
       let url

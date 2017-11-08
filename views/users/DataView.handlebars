@@ -34,7 +34,7 @@
       <ul class="collection">
         <li class="collection-item valign-wrapper" id="navigasi">Navigasi</li>
         {{#each navigasi}}
-          <a href="{{href}}" style="color: inherit">
+          <a id="{{aid}}" href="{{href}}" style="color: inherit">
             <li class="collection-item valign-wrapper {{class}}">
               <i class="material-icons bulet">{{icon}}</i> {{nama}}
             </li>
@@ -114,6 +114,7 @@
   {{> modal_lihat_data this}}
   {{> modal_create_data this}}
   {{> modal_edit_data this}}
+  {{> modal_kelola_password this}}
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="js/materialize.min.js"></script>
