@@ -42,7 +42,7 @@ describe('UserController', function () {
       testSession
         .post('/get_data/user')
         .send({
-          id: '5a007220ee87a6b1609d67ba'
+          id: '5a26b9eca1d49ca713e532c6'
         })
         .expect(200)
         .end(done)

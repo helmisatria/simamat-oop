@@ -32,7 +32,7 @@ describe('AdminController', function() {
           _id: 'test',
           username: 'uniqueusername3', 
           password: 'password',
-          nama: 'IMPAL kelompok 1' ,
+          nama: 'IMPAL kelompok 1',
           role: 'Admin',
           no_ktp: '123',
           alamat: 'F205'

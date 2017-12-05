@@ -8,8 +8,8 @@
 module.exports = {
 	login: (req, res) => {
 		return res.login({
-			username: req.param('username'),
-			password: req.param('password'),
+			username: req.body.username,
+			password: req.body.password,
 			successRedirect: '/dashboard',
 			invalidRedirect: '/login'
 		})

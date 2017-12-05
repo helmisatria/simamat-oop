@@ -26,7 +26,7 @@ describe('BarangController', function() {
     it('should get a Barang\'s detail', (done) => {
       testSession
         .post('/get_data/barang')
-        .send({ id: '5a000adf2e66825d5183d324' })
+        .send({ id: '5a26b0297a3bb4f65c97620c' })
         .expect(200)
         .end(done)
     })
