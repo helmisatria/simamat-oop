@@ -8,9 +8,6 @@
 module.exports = {
 
   attributes: {
-    id_staf_gudang :{
-      type : 'string',
-      required : true
-    },
+    
   }
 };
